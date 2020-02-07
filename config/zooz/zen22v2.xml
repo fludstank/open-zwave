@@ -2,28 +2,68 @@
 <Product xmlns='https://github.com/OpenZWave/open-zwave' Revision="2">
   <!-- Configuration Parameters -->
   <CommandClass id="112">
-    <Value genre="config" index="1" value="0" label="Orientation" units="" size="1" min="0" max="255" type="list">
-      <Help>Controls the on/off orientation of the rocker switch</Help>
-      <Item value="0" label="Normal"/>
-      <Item value="1" label="Inverted"/>
+    <Value genre="config" index="1" value="0" label="Paddle Control" units="" size="1" min="0" max="2" type="list">
+      <Help>Choose if you want the upper paddle to turn the light on or turn the light off when tapped</Help>
+      <Item value="0" label="Upper paddle turns on"/>
+      <Item value="1" label="Upper paddle turns off"/>
+      <Item value="2" label="Both paddles toggle"/>
     </Value>
-    <Value genre="config" index="2" value="0" label="LED Indicator Control" units="" size="1" min="0" max="255" type="list">
-      <Help>Choose if you want the LED indicator to turn on when switch is on or off</Help>
+    <Value genre="config" index="2" value="0" label="LED Indicator Control" units="" size="1" min="0" max="3" type="list">
+      <Help>Choose if you want the LED indicator to turn on when the switch (light) is on or off, or if you want it to remain on or off at all times</Help>
       <Item value="0" label="LED on when switch is off"/>
       <Item value="1" label="LED on when switch is on"/>
+      <Item value="2" label="LED is always off"/>
+      <Item value="3" label="LED is always on"/>
     </Value>
-    <Value genre="config" index="3" value="0" label="Enable/Disable LED Indicator" units="" size="1" min="0" max="255" type="list">
-      <Help>Enable or disable LED indicator so it stays off at all times</Help>
-      <Item value="0" label="Enabled"/>
-      <Item value="1" label="Disabled"/>
+    <Value genre="config" index="3" value="0" label="Auto Turn-off Timer" units="" size="1" min="0" max="1 " type="list">
+      <Help>Use this parameter to enable or disable the auto turn-off timer function</Help>
+      <Item value="0" label="Disabled"/>
+      <Item value="1" label="Enabled"/>
     </Value>
-    <Value genre="config" index="4" value="0" label="Ramp Rate Control" units="" size="1" min="0" max="255" type="list">
-      <Help>Choose how fast you want to turn the light on and off</Help>
-      <Item value="0" label="Slow"/>
-      <Item value="1" label="Fast"/>
+    <Value genre="config" index="4" value="60" label="Timer-off Time" units="minutes" size="4" min="1" max="65535" type="short">
+      <Help>Use this parameter to set the time after which you want the switch to automatically turn off once it has been turned on. The number entered as value corresponds to the number of minutes.</Help>
+    </Value>
+    <Value genre="config" index="5" value="0" label="Auto Turn-On Timer" units="" size="1" min="0" max="1 " type="list">
+      <Help>Use this parameter to enable or disable the auto turn-off timer function</Help>
+      <Item value="0" label="Disabled"/>
+      <Item value="1" label="Enabled"/>
+    </Value>
+    <Value genre="config" index="6" value="60" label="Timer-On Time" units="minutes" size="4" min="1" max="65535" type="short">
+      <Help>Use this parameter to set the time after which you want the switch to automatically turn on once it has been turned off. The number entered as value corresponds to the number of minutes.</Help>
+    </Value>
+    <Value genre="config" index="8" value="2" label="On Off Status after Power Failure" units="" size="1" min="0" max="2" type="list">
+      <Help>Set the on off status for switch after power failure</Help>
+      <Item value="0" label="forced to OFF (regardless of state prior to power outage)"/>
+      <Item value="1" label="forced to ON (regardless of state prior to power outage)"/>
+      <Item value="2" label="remembers and restores on/off status after power failure"/>
+    </Value>
+    <Value genre="config" index="9" value="1" label="Ramp Rate Control" size="1" min="1" max="99" units="seconds" type="byte">
+      <Help>Adjust the ramp rate for your dimmer (fade-in / fade-out effect for on / off operation). Values correspond to the number of seconds it take for the dimmer to reach full brightness or turn off when operated manually</Help>
+    </Value>
+    <Value genre="config" index="10" value="1" label="Minimum Brightness" size="1" min="1" max="99" units="percent" type="byte">
+      <Help>Set the minimum brightness level (in %) for your dimmer. You won’t be able to dim the light below the set value</Help>
+    </Value>
+    <Value genre="config" index="11" value="99" label="Maximum Brightness" size="1" min="1" max="99" units="percent" type="byte">
+      <Help>Set the maximum brightness level (in %) for your dimmer. You won’t be able to add brightness to the light beyond the set value. Note: if Parameter 12 is set to value 0, Parameter 11 is automatically disabled.</Help>
+    </Value>
+    <Value genre="config" index="12" value="0" label="Brightness Double Tap Function" size="1" min="0" max="1" type="list">
+      <Help>Choose if you want the dimmer to turn on to full brightness or custom brightness level aer you double-tap the upper paddle</Help>
+      <Item value="0" label="the light will turn on to full brightness with double tap"/>
+      <Item value="1" label="the light will turn on to the maximum brightness level set in Parameter 11 with double tap"/>
+    </Value>
+    <Value genre="config" index="13" value="False" label="Enable/Disable Scene Control" size="1" type="bool">
+      <Help>Enable or disable scene control functionality for quick double tap triggers.</Help>
+    </Value>
+    <Value genre="config" index="14" value="0" label="Enable / Disable Double Tap" size="1" min="0" max="2" type="list">
+      <Help>Enable or disable the doubletap function and assign brightness level to single tap</Help>
+      <Item value="0" label="double tap to full / maximum brightness level enabled"/>
+      <Item value="1" label="double tap to full / maximum brightness level disabled, single tap turns light on to last brightness level"/>
+      <Item value="2" label="double tap to full / maximum brightness level disabled, single tap turns light on to full / maximum brightness level"/>
+    </Value>
+    <Value genre="config" index="15" value="True" label="Enable / Disable Paddle Control" size="1" type="bool">
+      <Help>Enable or disable local on/off control. If enabled, you’ll only be able to control the connected light via Z-Wave. Scenes and other functionality will still be available through paddles</Help>
     </Value>
   </CommandClass>
-
   <!-- Association Groups -->
   <CommandClass id="133">
     <Associations num_groups="1">
