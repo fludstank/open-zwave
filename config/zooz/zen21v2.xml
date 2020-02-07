@@ -37,6 +37,16 @@
       <Item value="1" label="forced to ON (regardless of state prior to power outage)"/>
       <Item value="2" label="remembers and restores on/off status after power failure"/>
     </Value>
+    <Value type="list" genre="config" index="9" label="Enable/Disable Scene Control" size="1" min="0" max="1" value="0">
+      <Help>Enable or Disable scene control functionality for quick double tap triggers.</Help>
+      <Item label="Disabled" value="0"/>
+      <Item label="Enabled" value="1"/>
+    </Value>
+    <Value type="list" genre="config" index="10" label="Enable/Disable Paddle Control" size="1" min="0" max="1" value="1">
+      <Help>If enabled, you'll only be able to control the connected light via Z-Wave.  Scenes and other functionality will still be available through paddles.</Help>
+      <Item label="Disabled" value="0"/>
+      <Item label="Enabled" value="1"/>
+    </Value>
   </CommandClass>
 
   <!-- Association Groups -->
