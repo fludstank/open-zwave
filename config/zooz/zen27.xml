@@ -97,7 +97,7 @@ ask@getzooz.com)
       <Item label="Full" value="0"/>
       <Item label="Maximum Level" value="1"/>
     </Value>
-    <Value type="list" genre="config" index="13" label="Enable/Disable Scene Control" size="1" min="0" max="1" value="0">
+    <Value type="list" genre="config" index="13" label="Enable/Disable Scene Control" size="1" min="0" max="1" value="1">
       <Help>Enable or Disable scene control functionality for quick double tap triggers.</Help>
       <Item label="Disabled" value="0"/>
       <Item label="Enabled" value="1"/>
