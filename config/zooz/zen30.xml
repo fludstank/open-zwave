@@ -47,16 +47,16 @@
       <Item label="LEDs enabled" value="0"/>
       <Item label="LEDs disabled " value="1"/>
     </Value>
-    <Value type="short" genre="config" index="8" label="Auto Turn-Off Timer for Dimmer" size="4" min="1" max="65535" value="60" units="minutes">
+    <Value type="short" genre="config" index="8" label="Auto Turn-Off Timer for Dimmer" size="4" min="1" max="65535" value="0" units="minutes">
       <Help>Use this parameter to set the time after which you want the dimmer to automatically turn off once it has been turned on. The number entered as value corresponds to the number of minutes.</Help>
     </Value>
-    <Value type="short" genre="config" index="9" label="Auto Turn-On Timer for Dimmer" size="4" min="1" max="65535" value="60" units="minutes">
+    <Value type="short" genre="config" index="9" label="Auto Turn-On Timer for Dimmer" size="4" min="1" max="65535" value="0" units="minutes">
       <Help>Use this parameter to set the time after which you want the dimmer to automatically turn on once it has been turned off. The number entered as value corresponds to the number of minutes.</Help>
     </Value>
-    <Value type="short" genre="config" index="10" label="Auto Turn-Off Timer for Relay" size="4" min="1" max="65535" value="60" units="minutes">
+    <Value type="short" genre="config" index="10" label="Auto Turn-Off Timer for Relay" size="4" min="1" max="65535" value="0" units="minutes">
       <Help>Use this parameter to set the time after which you want the relay to automatically turn off once it has been turned on. The number entered as value corresponds to the number of minutes.</Help>
     </Value>
-    <Value type="short" genre="config" index="11" label="Auto Turn-On Timer for Relay" size="4" min="1" max="65535" value="60" units="minutes">
+    <Value type="short" genre="config" index="11" label="Auto Turn-On Timer for Relay" size="4" min="1" max="65535" value="0" units="minutes">
       <Help>Use this parameter to set the time after which you want the relay to automatically turn on once it has been turned off. The number entered as value corresponds to the number of minutes.</Help>
     </Value>
     <Value type="list" genre="config" index="12" label="On Off Status After Power Failure" size="1" min="0" max="7" value="3">
