@@ -51,7 +51,7 @@
       <Item value="0" label="the light will turn on to full brightness with double tap"/>
       <Item value="1" label="the light will turn on to the maximum brightness level set in Parameter 11 with double tap"/>
     </Value>
-    <Value genre="config" index="13" value="False" label="Enable/Disable Scene Control" size="1" type="bool">
+    <Value genre="config" index="13" value="True" label="Enable/Disable Scene Control" size="1" type="bool">
       <Help>Enable or disable scene control functionality for quick double tap triggers.</Help>
     </Value>
     <Value genre="config" index="14" value="0" label="Enable / Disable Double Tap" size="1" min="0" max="2" type="list">
